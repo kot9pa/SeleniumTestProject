@@ -163,3 +163,4 @@ cython_debug/
 .vscode/
 
 # Temp project files
+.python-version

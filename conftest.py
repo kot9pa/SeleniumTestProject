@@ -8,16 +8,16 @@ def pytest_addoption(parser):
     parser.addoption('--language', action='store', default='en-gb',
                      help="Choose language: ru/es/ko/fr etc.")
 
-@pytest.fixture(scope="class")
+@pytest.fixture(scope="function")
 def browser(request):
     browser_name = request.config.getoption("browser")
     user_language = request.config.getoption("language")
     browser = None
     if browser_name == "chrome":
         options = webdriver.ChromeOptions()
-        #options.add_experimental_option('excludeSwitches', ['enable-logging']) # Not work with headless
+        #options.add_experimental_option('excludeSwitches', ['enable-logging']) # Hide Dev-tools msg.. not work with headless!
         options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
-        options.add_argument("--headless=new") # Hide windows
+        options.add_argument("--headless=new") # Hide browsers
         options.add_argument("--log-level=3") # Hide console logs
         browser = webdriver.Chrome(options=options)
     elif browser_name == "firefox":
