@@ -13,10 +13,10 @@ class LoginPage(BasePage):
             "Login URL incorrect"
 
     def should_be_login_form(self):
-        assert bool(self.get_element_present(*LoginPageLocators.LOGIN_FORM)), \
+        assert bool(self.is_element_present(*LoginPageLocators.LOGIN_FORM)), \
             "Login form is not presented"
 
     def should_be_register_form(self):
-        assert bool(self.get_element_present(*LoginPageLocators.REGISTER_FORM)), \
+        assert bool(self.is_element_present(*LoginPageLocators.REGISTER_FORM)), \
             "Register form is not presented"
         
