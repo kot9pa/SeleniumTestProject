@@ -6,7 +6,6 @@ from selenium.common.exceptions import NoAlertPresentException
 
 class BasePage():
     MAIN_PAGE_LINK = "http://selenium1py.pythonanywhere.com/"
-    PRODUCT_PAGE_LINK = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"
 
     def __init__(self, browser: WebDriver, url, timeout=10):
         self.browser = browser
